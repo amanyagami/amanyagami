@@ -26,22 +26,7 @@ Research submissions under review (DAC 2026).
 - **Multi-Model RAG QA** — End-to-end document retrieval + LLM benchmarking  
 - **Retrieval-Faithful Fine-Tuning** — Penalty-based loss to reduce hallucinations (7B–13B, LoRA/QLoRA)  
 - **Robust Inference Pipelines** — H100 distributed training, <10ms inference, adversarial & OOD testing  
-
----
-
-## 📌 Featured Repositories
-<p align="center">
-  <a href="https://github.com/amanyagami/projects">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=amanyagami&repo=projects" />
-  </a>
-  <a href="https://github.com/amanyagami/inference">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=amanyagami&repo=inference" />
-  </a>
-  <a href="https://github.com/amanyagami/research">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=amanyagami&repo=research" />
-  </a>
-</p>
-
+ 
 ---
 
 ## 📊 GitHub Stats
