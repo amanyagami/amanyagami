@@ -22,21 +22,11 @@ Research submissions under review (DAC 2026).
 
 ---
 ## 📌 Featured Repositories
-<p align="center">
-  <a href="https://github.com/amanyagami/Fine_Tuning_Vision_Transformers_on_Cifar100">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=amanyagami&repo=Fine_Tuning_Vision_Transformers_on_Cifar100" />
-  </a>
-  <a href="https://github.com/amanyagami/Probablistic-modelling-of-features">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=amanyagami&repo=Probablistic-modelling-of-features" />
-  </a>
-  <a href="https://github.com/amanyagami/SLM-based-QA">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=amanyagami&repo=SLM-based-QA" />
-  </a>
-  <a href="https://github.com/amanyagami/Detecting-Silent-Data-Corruptions-in-Deep-Neural-Networks">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=amanyagami&repo=Detecting-Silent-Data-Corruptions-in-Deep-Neural-Networks" />
-  </a>
-</p>
----
+
+- [Fine_Tuning_Vision_Transformers_on_Cifar100](https://github.com/amanyagami/Fine_Tuning_Vision_Transformers_on_Cifar100)
+- [Probablistic-modelling-of-features](https://github.com/amanyagami/Probablistic-modelling-of-features)
+- [SLM-based-QA](https://github.com/amanyagami/SLM-based-QA)
+- [Detecting-Silent-Data-Corruptions-in-Deep-Neural-Networks](https://github.com/amanyagami/Detecting-Silent-Data-Corruptions-in-Deep-Neural-Networks)
 
 ## 📊 GitHub Stats
 <p align="center">
