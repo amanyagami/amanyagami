@@ -41,7 +41,7 @@ Research submissions under review (DAC 2026).
 | [pytorch/ao](https://github.com/pytorch/ao) ⭐ 2.9k | — | 🟠 17 |
 | [sergio-correia/arapuca](https://github.com/sergio-correia/arapuca) ⭐ 13 | ✅ 2 | — |
 
-<sub>Auto-updated 2026-08-20 21:38 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · excludes private repositories and personal projects</sub>
+<sub>Auto-updated 2026-08-20 21:39 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · excludes private repositories and personal projects</sub>
 <!-- OSS-STATS:END -->
 
 ## 📊 GitHub Stats
