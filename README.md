@@ -35,13 +35,13 @@ Research submissions under review (DAC 2026).
 
 | Library | Merged | Open |
 |---|:---:|:---:|
-| [MPSLab-ASU/Seperating_OOD_and_ADV](https://github.com/MPSLab-ASU/Seperating_OOD_and_ADV) | ✅ 1 | — |
-| [llvm/llvm-project](https://github.com/llvm/llvm-project) ⭐ 39.8k | ✅ 1 | 🟠 5 |
-| [ml-explore/mlx-lm](https://github.com/ml-explore/mlx-lm) ⭐ 6.7k | — | 🟠 1 |
-| [pytorch/ao](https://github.com/pytorch/ao) ⭐ 2.9k | — | 🟠 17 |
-| [sergio-correia/arapuca](https://github.com/sergio-correia/arapuca) ⭐ 13 | ✅ 2 | — |
+| [MPSLab-ASU/Seperating_OOD_and_ADV](https://github.com/MPSLab-ASU/Seperating_OOD_and_ADV) | [✅ 1](https://github.com/MPSLab-ASU/Seperating_OOD_and_ADV/pull/1) | — |
+| [llvm/llvm-project](https://github.com/llvm/llvm-project) ⭐ 39.8k | [✅ 1](https://github.com/llvm/llvm-project/pull/217510) | [🟠 5](https://github.com/search?q=repo%3Allvm/llvm-project%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
+| [ml-explore/mlx-lm](https://github.com/ml-explore/mlx-lm) ⭐ 6.7k | — | [🟠 1](https://github.com/ml-explore/mlx-lm/pull/1766) |
+| [pytorch/ao](https://github.com/pytorch/ao) ⭐ 2.9k | — | [🟠 17](https://github.com/search?q=repo%3Apytorch/ao%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
+| [sergio-correia/arapuca](https://github.com/sergio-correia/arapuca) ⭐ 13 | [✅ 2](https://github.com/search?q=repo%3Asergio-correia/arapuca%20is%3Apr%20author%3Aamanyagami%20is%3Amerged&type=pullrequests) | — |
 
-<sub>Auto-updated 2026-08-20 21:39 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · excludes private repositories and personal projects</sub>
+<sub>Auto-updated 2026-08-20 23:12 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · excludes private repositories and personal projects</sub>
 <!-- OSS-STATS:END -->
 
 ## 📊 GitHub Stats

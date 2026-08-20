@@ -15,7 +15,8 @@ import json
 import re
 import subprocess
 import sys
-from collections import Counter, defaultdict
+import urllib.parse
+from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 
 GITHUB_USER = "amanyagami"
@@ -85,6 +86,23 @@ def badge(label, value, color):
     return f"![{label}](https://img.shields.io/badge/{label_enc}-{value_enc}-{color}?style=flat-square)"
 
 
+def pr_search_url(repo, user, state):
+    """Live GitHub search for every PR the user opened in this repo with this state."""
+    q = f"repo:{repo} is:pr author:{user} is:{state}"
+    return f"https://github.com/search?q={urllib.parse.quote(q)}&type=pullrequests"
+
+
+def cell(matches, repo, user, state, icon):
+    """Render a table cell: '-' if none, a direct PR link if exactly one,
+    else a link to a live search over all of them. Reuses PR data already
+    fetched - no extra API calls."""
+    if not matches:
+        return "—"
+    if len(matches) == 1:
+        return f"[{icon} {len(matches)}]({matches[0]['url']})"
+    return f"[{icon} {len(matches)}]({pr_search_url(repo, user, state)})"
+
+
 def build_card(prs):
     external = [p for p in prs if owner_of(p["repo"]) not in EXCLUDED_OWNERS]
 
@@ -102,8 +120,12 @@ def build_card(prs):
         if datetime.fromisoformat(p["created"].replace("Z", "+00:00")) >= week_ago
     )
 
-    merged_by_repo = Counter(p["repo"] for p in merged_prs)
-    open_by_repo = Counter(p["repo"] for p in open_prs)
+    merged_by_repo = defaultdict(list)
+    open_by_repo = defaultdict(list)
+    for p in merged_prs:
+        merged_by_repo[p["repo"]].append(p)
+    for p in open_prs:
+        open_by_repo[p["repo"]].append(p)
     all_repos = sorted(set(merged_by_repo) | set(open_by_repo))
 
     lines = []
@@ -125,10 +147,8 @@ def build_card(prs):
         for repo in all_repos:
             stars = format_stars(repo_stars(repo))
             star_suffix = f" ⭐ {stars}" if stars else ""
-            merged_n = merged_by_repo.get(repo, 0)
-            open_n = open_by_repo.get(repo, 0)
-            merged_cell = f"✅ {merged_n}" if merged_n else "—"
-            open_cell = f"🟠 {open_n}" if open_n else "—"
+            merged_cell = cell(merged_by_repo.get(repo, []), repo, GITHUB_USER, "merged", "✅")
+            open_cell = cell(open_by_repo.get(repo, []), repo, GITHUB_USER, "open", "🟠")
             lines.append(
                 f"| [{repo}](https://github.com/{repo}){star_suffix} | {merged_cell} | {open_cell} |"
             )
