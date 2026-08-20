@@ -28,6 +28,22 @@ Research submissions under review (DAC 2026).
 - [SLM-based-QA](https://github.com/amanyagami/SLM-based-QA)
 - [Detecting-Silent-Data-Corruptions-in-Deep-Neural-Networks](https://github.com/amanyagami/Detecting-Silent-Data-Corruptions-in-Deep-Neural-Networks)
 
+<!-- OSS-STATS:START -->
+### 🚀 Open Source Contributions
+
+![Open PRs](https://img.shields.io/badge/Open%20PRs-23-orange?style=flat-square) ![Merged](https://img.shields.io/badge/Merged-4-brightgreen?style=flat-square) ![This week](https://img.shields.io/badge/This%20week-25-blue?style=flat-square) ![Today](https://img.shields.io/badge/Today-11-blueviolet?style=flat-square) ![Libraries](https://img.shields.io/badge/Libraries-5-informational?style=flat-square)
+
+| Library | Merged | Open |
+|---|:---:|:---:|
+| [MPSLab-ASU/Seperating_OOD_and_ADV](https://github.com/MPSLab-ASU/Seperating_OOD_and_ADV) | ✅ 1 | — |
+| [llvm/llvm-project](https://github.com/llvm/llvm-project) ⭐ 39.8k | ✅ 1 | 🟠 5 |
+| [ml-explore/mlx-lm](https://github.com/ml-explore/mlx-lm) ⭐ 6.7k | — | 🟠 1 |
+| [pytorch/ao](https://github.com/pytorch/ao) ⭐ 2.9k | — | 🟠 17 |
+| [sergio-correia/arapuca](https://github.com/sergio-correia/arapuca) ⭐ 13 | ✅ 2 | — |
+
+<sub>Auto-updated 2026-08-20 21:38 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · excludes private repositories and personal projects</sub>
+<!-- OSS-STATS:END -->
+
 ## 📊 GitHub Stats
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=amanyagami&show_icons=true&count_private=true&theme=default" />
