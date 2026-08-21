@@ -31,7 +31,7 @@ Research submissions under review (DAC 2026).
 <!-- OSS-STATS:START -->
 ### 🚀 Open Source Contributions
 
-![Open PRs](https://img.shields.io/badge/Open%20PRs-23-orange?style=flat-square) ![Merged](https://img.shields.io/badge/Merged-4-brightgreen?style=flat-square) ![This week](https://img.shields.io/badge/This%20week-25-blue?style=flat-square) ![Today](https://img.shields.io/badge/Today-11-blueviolet?style=flat-square) ![Libraries](https://img.shields.io/badge/Libraries-5-informational?style=flat-square)
+![Open PRs](https://img.shields.io/badge/Open%20PRs-23-orange?style=flat-square) ![Merged](https://img.shields.io/badge/Merged-4-brightgreen?style=flat-square) ![This week](https://img.shields.io/badge/This%20week-25-blue?style=flat-square) ![Today](https://img.shields.io/badge/Today-0-blueviolet?style=flat-square) ![Libraries](https://img.shields.io/badge/Libraries-5-informational?style=flat-square)
 
 | Library | Merged | Open |
 |---|:---:|:---:|
@@ -41,7 +41,7 @@ Research submissions under review (DAC 2026).
 | [pytorch/ao](https://github.com/pytorch/ao) ⭐ 2.9k | — | [🟠 17](https://github.com/search?q=repo%3Apytorch/ao%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
 | [sergio-correia/arapuca](https://github.com/sergio-correia/arapuca) ⭐ 13 | [✅ 2](https://github.com/search?q=repo%3Asergio-correia/arapuca%20is%3Apr%20author%3Aamanyagami%20is%3Amerged&type=pullrequests) | — |
 
-<sub>Auto-updated 2026-08-20 23:12 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · excludes private repositories and personal projects</sub>
+<sub>Auto-updated 2026-08-21 00:31 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · excludes private repositories and personal projects</sub>
 <!-- OSS-STATS:END -->
 
 ## 📊 GitHub Stats
