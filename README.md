@@ -43,7 +43,7 @@ Research submissions under review (DAC 2026).
 | [sgl-project/sglang](https://github.com/sgl-project/sglang) ⭐ 32.3k | — | [🟠 1](https://github.com/sgl-project/sglang/pull/35781) |
 | [verl-project/verl](https://github.com/verl-project/verl) ⭐ 23.1k | — | [🟠 2](https://github.com/search?q=repo%3Averl-project/verl%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
 
-<sub>Auto-updated 2026-08-23 12:14 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · excludes private repositories and personal projects</sub>
+<sub>Auto-updated 2026-08-23 18:11 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · excludes private repositories and personal projects</sub>
 <!-- OSS-STATS:END -->
 
 ## 📊 GitHub Stats
