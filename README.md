@@ -31,7 +31,7 @@ Research submissions under review (DAC 2026).
 <!-- OSS-STATS:START -->
 ### 🚀 Open Source Contributions
 
-![Open PRs](https://img.shields.io/badge/Open%20PRs-26-orange?style=flat-square) ![Merged](https://img.shields.io/badge/Merged-5-brightgreen?style=flat-square) ![This week](https://img.shields.io/badge/This%20week-34-blue?style=flat-square) ![Today](https://img.shields.io/badge/Today-0-blueviolet?style=flat-square) ![Libraries](https://img.shields.io/badge/Libraries-7-informational?style=flat-square)
+![Open PRs](https://img.shields.io/badge/Open%20PRs-26-orange?style=flat-square) ![Merged](https://img.shields.io/badge/Merged-5-brightgreen?style=flat-square) ![This week](https://img.shields.io/badge/This%20week-37-blue?style=flat-square) ![Today](https://img.shields.io/badge/Today-0-blueviolet?style=flat-square) ![Libraries](https://img.shields.io/badge/Libraries-7-informational?style=flat-square)
 
 | Library | Merged | Open |
 |---|:---:|:---:|
@@ -43,7 +43,7 @@ Research submissions under review (DAC 2026).
 | [sgl-project/sglang](https://github.com/sgl-project/sglang) ⭐ 32.4k | — | [🟠 1](https://github.com/sgl-project/sglang/pull/35781) |
 | [verl-project/verl](https://github.com/verl-project/verl) ⭐ 23.1k | — | [🟠 2](https://github.com/search?q=repo%3Averl-project/verl%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
 
-<sub>Auto-updated 2026-08-24 18:20 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · excludes private repositories and personal projects</sub>
+<sub>Auto-updated 2026-08-25 00:29 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · excludes private repositories and personal projects</sub>
 <!-- OSS-STATS:END -->
 
 ## 📊 GitHub Stats
