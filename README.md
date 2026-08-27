@@ -40,10 +40,10 @@ Research submissions under review (DAC 2026).
 | [llvm/llvm-project](https://github.com/llvm/llvm-project) ⭐ 40k | [✅ 2](https://github.com/search?q=repo%3Allvm/llvm-project%20is%3Apr%20author%3Aamanyagami%20is%3Amerged&type=pullrequests) | [🟠 3](https://github.com/search?q=repo%3Allvm/llvm-project%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
 | [pytorch/ao](https://github.com/pytorch/ao) ⭐ 3k | — | [🟠 17](https://github.com/search?q=repo%3Apytorch/ao%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
 | [sergio-correia/arapuca](https://github.com/sergio-correia/arapuca) ⭐ 14 | [✅ 2](https://github.com/search?q=repo%3Asergio-correia/arapuca%20is%3Apr%20author%3Aamanyagami%20is%3Amerged&type=pullrequests) | — |
-| [sgl-project/sglang](https://github.com/sgl-project/sglang) ⭐ 32.5k | — | [🟠 1](https://github.com/sgl-project/sglang/pull/35781) |
+| [sgl-project/sglang](https://github.com/sgl-project/sglang) ⭐ 32.6k | — | [🟠 1](https://github.com/sgl-project/sglang/pull/35781) |
 | [verl-project/verl](https://github.com/verl-project/verl) ⭐ 23.2k | — | [🟠 2](https://github.com/search?q=repo%3Averl-project/verl%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
 
-<sub>Auto-updated 2026-08-27 05:17 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · excludes private repositories and personal projects</sub>
+<sub>Auto-updated 2026-08-27 16:55 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · excludes private repositories and personal projects</sub>
 <!-- OSS-STATS:END -->
 
 ## 📊 GitHub Stats
