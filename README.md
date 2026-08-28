@@ -63,6 +63,19 @@ Accepted at **ESWEEK CODES 2026**
 
 Research on separating adversarial and out-of-distribution inputs using intermediate-representation geometry, with reproducible PyTorch training and evaluation workflows.
 
+**Viyog resources**
+
+| Resource | Link |
+| --- | --- |
+| Venue | [ESWEEK 2026 / CODES](https://esweek.org/) |
+| Code and experiments | [MPS Lab repository](https://github.com/MPSLab-ASU/Seperating_OOD_and_ADV) |
+| Package | [PyPI: viyog](https://pypi.org/project/viyog/) |
+| Interactive evaluation | [Viyog OOD-vs-ADV Leaderboard](https://huggingface.co/spaces/amanyagami/viyog) |
+| Dataset | [viyog-adversarial](https://huggingface.co/datasets/amanyagami/viyog-adversarial) |
+| Research weights | [viyog-weights](https://huggingface.co/amanyagami/viyog-weights) |
+| CIFAR-100 checkpoint | [Cifar100_Finetuned](https://huggingface.co/amanyagami/Cifar100_Finetuned) |
+| Vision Transformer checkpoint | [Vit_base_patch16_224.pth](https://huggingface.co/amanyagami/Vit_base_patch16_224.pth) |
+
 ## Education
 
 - **M.S. in Computer Engineering** — Arizona State University, 2024–2026
