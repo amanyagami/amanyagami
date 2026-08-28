@@ -12,7 +12,7 @@ I build LLM systems from training and inference to secure, reliable deployment.
 
 ## Currently
 
-Founding Engineer at Noah Labs in Palo Alto, California, building Sentinel's async agent runtime for local-first and air-gapped AI. Previously a Software Development Engineer at Amazon in Bangalore, India, and a Graduate Researcher at Arizona State University's MPS Lab in Tempe, Arizona.
+**Founding Engineer at Noah Labs**, building Sentinel's async agent runtime for local-first and air-gapped AI in Palo Alto, California.
 
 ## Engineering snapshot
 
@@ -24,19 +24,7 @@ Founding Engineer at Noah Labs in Palo Alto, California, building Sentinel's asy
 | **GPU and distributed ML** | H100 training with DDP and FP16/BF16, FSDP checkpointing, vLLM rollout networking, and sub-10 ms A6000 inference |
 | **Production engineering** | Amazon systems that supported 1.8× peak client traffic, reduced operating costs by 30%, and cut incidents by 60% |
 
-## Selected work
-
-| Project | What it demonstrates |
-| --- | --- |
-| [Make Presentation Simple](https://github.com/amanyagami/Make_Presentation_Simple.io) | Serverless multimodal workflow using Lambda, Step Functions, S3, and DynamoDB |
-| [Nandi — SLM Research Assistant](https://github.com/amanyagami/SLM-based-QA) | Direct prompting versus RAG across small and large language models |
-| [ViT Fine-Tuning Benchmarks](https://github.com/amanyagami/Fine_Tuning_Vision_Transformers_on_Cifar100) | Reproducible vision-model fine-tuning and evaluation on CIFAR-100 |
-| [AI Loop Automation](https://github.com/amanyagami/chatgpt_automation) | Multi-agent investigation, review, planning, testing, and pull-request automation |
-| [DrDNA](https://github.com/amanyagami/Detecting-Silent-Data-Corruptions-in-Deep-Neural-Networks) | Post-hoc silent-data-corruption detection in deep networks |
-
 ## Open-source systems work
-
-I contribute fixes and implementation work at the boundary between models, runtimes, distributed execution, and hardware.
 
 | Project | Contribution |
 | --- | --- |
@@ -46,6 +34,18 @@ I contribute fixes and implementation work at the boundary between models, runti
 | [PyTorch AO](https://github.com/pytorch/ao) | FP8 and quantization implementation work |
 | [LLVM/MLIR](https://github.com/llvm/llvm-project) | Two merged correctness fixes |
 | [arapuca](https://github.com/sergio-correia/arapuca) | Windows AppContainer/LPAC and Linux filesystem-isolation fixes |
+
+## Selected work
+
+| Project | What it demonstrates |
+| --- | --- |
+| [Make Presentation Simple](https://github.com/amanyagami/Make_Presentation_Simple.io) | Serverless multimodal workflow using Lambda, Step Functions, S3, and DynamoDB |
+| [Nandi — SLM Research Assistant](https://github.com/amanyagami/SLM-based-QA) | Direct prompting versus RAG across small and large language models |
+| [ViT Fine-Tuning Benchmarks](https://github.com/amanyagami/Fine_Tuning_Vision_Transformers_on_Cifar100) | Reproducible vision-model fine-tuning and evaluation on CIFAR-100 |
+| [DrDNA](https://github.com/amanyagami/Detecting-Silent-Data-Corruptions-in-Deep-Neural-Networks) | Post-hoc silent-data-corruption detection in deep networks |
+
+<!-- OSS-STATS:START -->
+<!-- OSS-STATS:END -->
 
 ## Research
 
@@ -65,11 +65,6 @@ Research on separating adversarial and out-of-distribution inputs using intermed
 **ML systems:** PyTorch · CUDA · DDP/FSDP · Megatron-LM · FP16/BF16 · quantization · evaluation<br>
 **LLM and inference:** SGLang · vLLM · Transformers · RAG · agentic systems · LoRA/QLoRA<br>
 **Infrastructure:** Linux · Kubernetes · Docker · AWS · Google Cloud · CI/CD · Spark
-
-## Live contribution activity
-
-<!-- OSS-STATS:START -->
-<!-- OSS-STATS:END -->
 
 ## Connect
 
