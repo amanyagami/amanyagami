@@ -23,17 +23,19 @@ I build LLM systems from training and inference to secure, reliable deployment.
 | **Secure systems** | Rust sandboxing, Windows AppContainer/LPAC confinement, and Linux filesystem isolation |
 | **GPU and distributed ML** | H100 training with DDP and FP16/BF16, FSDP checkpointing, vLLM rollout networking, and sub-10 ms A6000 inference |
 | **Production engineering** | Amazon systems that supported 1.8× peak client traffic, reduced operating costs by 30%, and cut incidents by 60% |
+| **Open-source systems** | SGLang, VERL, Megatron-LM, PyTorch AO, LLVM/MLIR, and arapuca · ✅ [5 merged](#open-source-systems-work) · 🟠 [27 pending](#open-source-systems-work) |
 
 ## Open-source systems work
 
-| Project | Contribution |
-| --- | --- |
-| [SGLang](https://github.com/sgl-project/sglang) | KV/radix-cache correctness across SWA, Mamba, unified, and C++ backends |
-| [VERL](https://github.com/verl-project/verl) | FSDP checkpoint integrity and vLLM rollout networking |
-| [Megatron-LM](https://github.com/NVIDIA/Megatron-LM) | Pipeline-parallel execution and distributed training fixes |
-| [PyTorch AO](https://github.com/pytorch/ao) | FP8 and quantization implementation work |
-| [LLVM/MLIR](https://github.com/llvm/llvm-project) | Two merged correctness fixes |
-| [arapuca](https://github.com/sergio-correia/arapuca) | Windows AppContainer/LPAC and Linux filesystem-isolation fixes |
+| Project | Contribution | PR status |
+| --- | --- | --- |
+| [SGLang](https://github.com/sgl-project/sglang) | KV/radix-cache correctness across SWA, Mamba, unified, and C++ backends | 🟠 [1 pending](https://github.com/sgl-project/sglang/pull/35781) |
+| [VERL](https://github.com/verl-project/verl) | FSDP checkpoint integrity and vLLM rollout networking | 🟠 [2 pending](https://github.com/search?q=repo%3Averl-project%2Fverl%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
+| [Megatron-LM](https://github.com/NVIDIA/Megatron-LM) | Pipeline-parallel execution and distributed training fixes | 🟠 [2 pending](https://github.com/search?q=repo%3ANVIDIA%2FMegatron-LM%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
+| [PyTorch AO](https://github.com/pytorch/ao) | FP8 and quantization implementation work | 🟠 [17 pending](https://github.com/search?q=repo%3Apytorch%2Fao%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
+| [LLVM/MLIR](https://github.com/llvm/llvm-project) | Two merged correctness fixes, plus active fixes under review | ✅ [2 merged](https://github.com/search?q=repo%3Allvm%2Fllvm-project%20is%3Apr%20author%3Aamanyagami%20is%3Amerged&type=pullrequests) · 🟠 [4 pending](https://github.com/search?q=repo%3Allvm%2Fllvm-project%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
+| [arapuca](https://github.com/sergio-correia/arapuca) | Windows AppContainer/LPAC and Linux filesystem-isolation fixes | ✅ [2 merged](https://github.com/search?q=repo%3Asergio-correia%2Farapuca%20is%3Apr%20author%3Aamanyagami%20is%3Amerged&type=pullrequests) · 🟠 [1 pending](https://github.com/noahlabsai/arapuca/pull/1) |
+| [Viyog / MPS Lab](https://github.com/MPSLab-ASU/Seperating_OOD_and_ADV) | Adversarial and out-of-distribution separation framework | ✅ [1 merged](https://github.com/MPSLab-ASU/Seperating_OOD_and_ADV/pull/1) |
 
 ## Selected work
 
@@ -50,7 +52,7 @@ I build LLM systems from training and inference to secure, reliable deployment.
 ## Research
 
 **Viyog: Separating Adversarial and Out-of-Distribution**<br>
-Submitted to **ESWEEK CODES 2026** · under review
+Accepted at **ESWEEK CODES 2026**
 
 Research on separating adversarial and out-of-distribution inputs using intermediate-representation geometry, with reproducible PyTorch training and evaluation workflows.
 
