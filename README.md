@@ -12,13 +12,11 @@ I build LLM systems from training and inference to secure, reliable deployment.
 
 </div>
 
-**Now:** Founding Engineer at Noah Labs, building Sentinel's async agent runtime for local-first and air-gapped AI in Palo Alto, California.
-
 **Focus:** LLM runtimes · GPU/distributed ML · secure execution · robust ML · production systems
 
 **Evidence:** H100/DDP/FP16-BF16 · FSDP/vLLM · sub-10 ms A6000 inference · Rust sandboxing · 1.8× traffic · 30% lower cost · 60% fewer incidents
 
-**Open-source:** SGLang · VERL · Megatron-LM · PyTorch AO · LLVM/MLIR · arapuca · <!-- OSS-SUMMARY:START -->✅ [5 merged](#open-source-systems-work) · 🟠 [29 pending](#open-source-systems-work)<!-- OSS-SUMMARY:END -->
+**Open-source:** SGLang · VERL · Megatron-LM · PyTorch AO · LLVM/MLIR · <!-- OSS-SUMMARY:START -->✅ [3 merged](#open-source-systems-work) · 🟠 [27 pending](#open-source-systems-work)<!-- OSS-SUMMARY:END -->
 
 ## Open-source systems work
 
@@ -33,13 +31,11 @@ I build LLM systems from training and inference to secure, reliable deployment.
 | [NVIDIA/Megatron-LM](https://github.com/NVIDIA/Megatron-LM) | [🟠 2 pending](https://github.com/search?q=repo%3ANVIDIA/Megatron-LM%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
 | [huggingface/trl](https://github.com/huggingface/trl) | [🟠 2 pending](https://github.com/search?q=repo%3Ahuggingface/trl%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
 | [llvm/llvm-project](https://github.com/llvm/llvm-project) | [✅ 2 merged](https://github.com/search?q=repo%3Allvm/llvm-project%20is%3Apr%20author%3Aamanyagami%20is%3Amerged&type=pullrequests) · [🟠 4 pending](https://github.com/search?q=repo%3Allvm/llvm-project%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
-| [noahlabsai/arapuca](https://github.com/noahlabsai/arapuca) | [🟠 1 pending](https://github.com/noahlabsai/arapuca/pull/1) |
 | [pytorch/ao](https://github.com/pytorch/ao) | [🟠 17 pending](https://github.com/search?q=repo%3Apytorch/ao%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
-| [sergio-correia/arapuca](https://github.com/sergio-correia/arapuca) | [✅ 2 merged](https://github.com/search?q=repo%3Asergio-correia%2Farapuca%20is%3Apr%20author%3Aamanyagami%20is%3Amerged&type=pullrequests) |
 | [sgl-project/sglang](https://github.com/sgl-project/sglang) | [🟠 1 pending](https://github.com/sgl-project/sglang/pull/35781) |
 | [verl-project/verl](https://github.com/verl-project/verl) | [🟠 2 pending](https://github.com/search?q=repo%3Averl-project%2Fverl%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
 
-<sub>Auto-updated 2026-08-28 03:45 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · includes public PRs authored by amanyagami; excludes personal repositories</sub>
+<sub>Auto-updated 2026-08-28 03:45 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · includes public external PRs authored by amanyagami; excludes personal and excluded repositories</sub>
 <!-- OSS-STATS:END -->
 
 ## Selected work

@@ -19,6 +19,7 @@ from datetime import datetime, timezone
 
 GITHUB_USER = "amanyagami"
 EXCLUDED_OWNERS = {GITHUB_USER}
+EXCLUDED_REPOS = {"noahlabsai/arapuca", "sergio-correia/arapuca"}
 
 START_MARKER = "<!-- OSS-STATS:START -->"
 END_MARKER = "<!-- OSS-STATS:END -->"
@@ -78,6 +79,7 @@ def public_prs(prs):
         pr
         for pr in prs
         if owner_of(pr["repo"]) not in EXCLUDED_OWNERS
+        and pr["repo"] not in EXCLUDED_REPOS
         and repo_is_public(pr["repo"])
     ]
 
@@ -146,7 +148,7 @@ def build_card(prs):
             "",
             f"<sub>Auto-updated {ts} by "
             f"[update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · "
-            f"includes public PRs authored by {GITHUB_USER}; excludes personal repositories</sub>",
+            f"includes public external PRs authored by {GITHUB_USER}; excludes personal and Noah Labs-related repositories</sub>",
             END_MARKER,
         ]
     )
