@@ -27,17 +27,6 @@ SUMMARY_END_MARKER = "<!-- OSS-SUMMARY:END -->"
 
 README_PATH = "README.md"
 
-REPO_NOTES = {
-    "MPSLab-ASU/Seperating_OOD_and_ADV": "Adversarial/OOD separation framework",
-    "NVIDIA/Megatron-LM": "Pipeline-parallel execution and distributed training",
-    "llvm/llvm-project": "MLIR compiler correctness",
-    "pytorch/ao": "FP8 and quantization implementation work",
-    "sergio-correia/arapuca": "Sandbox isolation on Linux and Windows",
-    "noahlabsai/arapuca": "Sandbox isolation on Linux and Windows",
-    "sgl-project/sglang": "KV/radix-cache correctness across runtime backends",
-    "verl-project/verl": "FSDP checkpoint integrity and vLLM rollout networking",
-}
-
 PUBLIC_REPO_CACHE = {}
 
 
@@ -135,10 +124,10 @@ def build_card(prs):
         START_MARKER,
         "### Public PR activity",
         "",
-        "✅ merged · 🟠 pending — counts link to matching PRs and refresh automatically.",
+        "✅ merged · 🟠 pending — linked counts refresh automatically.",
         "",
-        "| Repository | Contribution area | PR status |",
-        "|---|---|---|",
+        "| Repository | PR status |",
+        "|---|---|",
     ]
 
     for repo in sorted(by_repo):
@@ -148,8 +137,7 @@ def build_card(prs):
             for status in ("merged", "pending")
         )
         lines.append(
-            f"| [{repo}](https://github.com/{repo}) | "
-            f"{REPO_NOTES.get(repo, 'Public PR activity')} | {status_cells} |"
+            f"| [{repo}](https://github.com/{repo}) | {status_cells} |"
         )
 
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
