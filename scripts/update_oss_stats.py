@@ -19,7 +19,7 @@ from datetime import datetime, timezone
 
 GITHUB_USER = "amanyagami"
 EXCLUDED_OWNERS = {GITHUB_USER}
-EXCLUDED_REPOS = {"noahlabsai/arapuca", "sergio-correia/arapuca"}
+EXCLUDED_REPOS = {"noahlabsai/arapuca"}
 
 START_MARKER = "<!-- OSS-STATS:START -->"
 END_MARKER = "<!-- OSS-STATS:END -->"
@@ -148,7 +148,7 @@ def build_card(prs):
             "",
             f"<sub>Auto-updated {ts} by "
             f"[update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · "
-            f"includes public external PRs authored by {GITHUB_USER}; excludes personal and Noah Labs-related repositories</sub>",
+            f"includes public external PRs authored by {GITHUB_USER}; excludes personal and excluded repositories</sub>",
             END_MARKER,
         ]
     )

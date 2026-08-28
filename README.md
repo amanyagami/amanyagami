@@ -16,7 +16,7 @@ I build LLM systems from training and inference to secure, reliable deployment.
 
 **Evidence:** H100/DDP/FP16-BF16 · FSDP/vLLM · sub-10 ms A6000 inference · Rust sandboxing · 1.8× traffic · 30% lower cost · 60% fewer incidents
 
-**Open-source:** SGLang · VERL · Megatron-LM · PyTorch AO · LLVM/MLIR · <!-- OSS-SUMMARY:START -->✅ [3 merged](#open-source-systems-work) · 🟠 [27 pending](#open-source-systems-work)<!-- OSS-SUMMARY:END -->
+**Open-source:** SGLang · VERL · Megatron-LM · PyTorch AO · LLVM/MLIR · arapuca · <!-- OSS-SUMMARY:START -->✅ [5 merged](#open-source-systems-work) · 🟠 [27 pending](#open-source-systems-work)<!-- OSS-SUMMARY:END -->
 
 ## Open-source systems work
 
@@ -32,6 +32,7 @@ I build LLM systems from training and inference to secure, reliable deployment.
 | [huggingface/trl](https://github.com/huggingface/trl) | [🟠 2 pending](https://github.com/search?q=repo%3Ahuggingface/trl%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
 | [llvm/llvm-project](https://github.com/llvm/llvm-project) | [✅ 2 merged](https://github.com/search?q=repo%3Allvm/llvm-project%20is%3Apr%20author%3Aamanyagami%20is%3Amerged&type=pullrequests) · [🟠 4 pending](https://github.com/search?q=repo%3Allvm/llvm-project%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
 | [pytorch/ao](https://github.com/pytorch/ao) | [🟠 17 pending](https://github.com/search?q=repo%3Apytorch/ao%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
+| [sergio-correia/arapuca](https://github.com/sergio-correia/arapuca) | [✅ 2 merged](https://github.com/search?q=repo%3Asergio-correia%2Farapuca%20is%3Apr%20author%3Aamanyagami%20is%3Amerged&type=pullrequests) |
 | [sgl-project/sglang](https://github.com/sgl-project/sglang) | [🟠 1 pending](https://github.com/sgl-project/sglang/pull/35781) |
 | [verl-project/verl](https://github.com/verl-project/verl) | [🟠 2 pending](https://github.com/search?q=repo%3Averl-project%2Fverl%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
 
