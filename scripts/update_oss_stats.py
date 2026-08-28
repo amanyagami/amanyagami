@@ -2,7 +2,7 @@
 """Regenerate the visible public PR table in README.md.
 
 Pulls every PR authored by GITHUB_USER through the `gh` CLI, keeps only
-public repositories, and replaces the content between the OSS-STATS
+public repositories outside the user's own namespace, and replaces the content between the OSS-STATS
 markers with linked counts for merged, pending, and closed PRs. The same
 source data updates the compact summary in the Engineering Snapshot.
 
@@ -18,6 +18,7 @@ from collections import defaultdict
 from datetime import datetime, timezone
 
 GITHUB_USER = "amanyagami"
+EXCLUDED_OWNERS = {GITHUB_USER}
 
 START_MARKER = "<!-- OSS-STATS:START -->"
 END_MARKER = "<!-- OSS-STATS:END -->"
@@ -79,8 +80,17 @@ def repo_is_public(repo):
     return PUBLIC_REPO_CACHE[repo]
 
 
+def owner_of(repo):
+    return repo.split("/", 1)[0]
+
+
 def public_prs(prs):
-    return [pr for pr in prs if repo_is_public(pr["repo"])]
+    return [
+        pr
+        for pr in prs
+        if owner_of(pr["repo"]) not in EXCLUDED_OWNERS
+        and repo_is_public(pr["repo"])
+    ]
 
 
 def status_of(pr):
@@ -147,7 +157,7 @@ def build_card(prs):
             "",
             f"<sub>Auto-updated {ts} by "
             f"[update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · "
-            f"includes public PRs authored by {GITHUB_USER}</sub>",
+            f"includes public PRs authored by {GITHUB_USER}; excludes personal repositories</sub>",
             END_MARKER,
         ]
     )
