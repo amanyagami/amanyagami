@@ -23,28 +23,26 @@ I build LLM systems from training and inference to secure, reliable deployment.
 | **Secure systems** | Rust sandboxing, Windows AppContainer/LPAC confinement, and Linux filesystem isolation |
 | **GPU and distributed ML** | H100 training with DDP and FP16/BF16, FSDP checkpointing, vLLM rollout networking, and sub-10 ms A6000 inference |
 | **Production engineering** | Amazon systems that supported 1.8× peak client traffic, reduced operating costs by 30%, and cut incidents by 60% |
-| **Open-source systems** | SGLang, VERL, Megatron-LM, PyTorch AO, LLVM/MLIR, and arapuca · <!-- OSS-SUMMARY:START -->✅ [5 merged](#open-source-systems-work) · 🟠 [29 pending](#open-source-systems-work) · ⚪ [10 closed](#open-source-systems-work)<!-- OSS-SUMMARY:END --> |
+| **Open-source systems** | SGLang, VERL, Megatron-LM, PyTorch AO, LLVM/MLIR, and arapuca · <!-- OSS-SUMMARY:START -->✅ [5 merged](#open-source-systems-work) · 🟠 [29 pending](#open-source-systems-work)<!-- OSS-SUMMARY:END --> |
 
 ## Open-source systems work
 
 <!-- OSS-STATS:START -->
 ### Public PR activity
 
-✅ merged · 🟠 pending · ⚪ closed — counts link to matching PRs and refresh automatically.
+✅ merged · 🟠 pending — counts link to matching PRs and refresh automatically.
 
 | Repository | Contribution area | PR status |
 |---|---|---|
-| [MPSLab-ASU/Seperating_OOD_and_ADV](https://github.com/MPSLab-ASU/Seperating_OOD_and_ADV) | Adversarial/OOD separation framework | [✅ 1 merged](https://github.com/MPSLab-ASU/Seperating_OOD_and_ADV/pull/1) · — · — |
-| [NVIDIA/Megatron-LM](https://github.com/NVIDIA/Megatron-LM) | Pipeline-parallel execution and distributed training | — · [🟠 2 pending](https://github.com/search?q=repo%3ANVIDIA/Megatron-LM%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) · — |
-| [huggingface/trl](https://github.com/huggingface/trl) | Public PR activity | — · [🟠 2 pending](https://github.com/search?q=repo%3Ahuggingface/trl%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) · — |
-| [langchain-ai/langgraph](https://github.com/langchain-ai/langgraph) | Public PR activity | — · — · [⚪ 3 closed](https://github.com/search?q=repo%3Alangchain-ai/langgraph%20is%3Apr%20author%3Aamanyagami%20is%3Aclosed%20-is%3Amerged&type=pullrequests) |
-| [llvm/llvm-project](https://github.com/llvm/llvm-project) | MLIR compiler correctness | [✅ 2 merged](https://github.com/search?q=repo%3Allvm/llvm-project%20is%3Apr%20author%3Aamanyagami%20is%3Amerged&type=pullrequests) · [🟠 4 pending](https://github.com/search?q=repo%3Allvm/llvm-project%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) · [⚪ 1 closed](https://github.com/llvm/llvm-project/pull/217513) |
-| [ml-explore/mlx-lm](https://github.com/ml-explore/mlx-lm) | Public PR activity | — · — · [⚪ 2 closed](https://github.com/search?q=repo%3Aml-explore/mlx-lm%20is%3Apr%20author%3Aamanyagami%20is%3Aclosed%20-is%3Amerged&type=pullrequests) |
-| [noahlabsai/arapuca](https://github.com/noahlabsai/arapuca) | Sandbox isolation on Linux and Windows | — · [🟠 1 pending](https://github.com/noahlabsai/arapuca/pull/1) · — |
-| [pytorch/ao](https://github.com/pytorch/ao) | FP8 and quantization implementation work | — · [🟠 17 pending](https://github.com/search?q=repo%3Apytorch/ao%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) · — |
-| [sergio-correia/arapuca](https://github.com/sergio-correia/arapuca) | Sandbox isolation on Linux and Windows | [✅ 2 merged](https://github.com/search?q=repo%3Asergio-correia/arapuca%20is%3Apr%20author%3Aamanyagami%20is%3Amerged&type=pullrequests) · — · — |
-| [sgl-project/sglang](https://github.com/sgl-project/sglang) | KV/radix-cache correctness across runtime backends | — · [🟠 1 pending](https://github.com/sgl-project/sglang/pull/35781) · — |
-| [verl-project/verl](https://github.com/verl-project/verl) | FSDP checkpoint integrity and vLLM rollout networking | — · [🟠 2 pending](https://github.com/search?q=repo%3Averl-project/verl%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) · [⚪ 4 closed](https://github.com/search?q=repo%3Averl-project/verl%20is%3Apr%20author%3Aamanyagami%20is%3Aclosed%20-is%3Amerged&type=pullrequests) |
+| [MPSLab-ASU/Seperating_OOD_and_ADV](https://github.com/MPSLab-ASU/Seperating_OOD_and_ADV) | Adversarial/OOD separation framework | [✅ 1 merged](https://github.com/MPSLab-ASU/Seperating_OOD_and_ADV/pull/1) · — |
+| [NVIDIA/Megatron-LM](https://github.com/NVIDIA/Megatron-LM) | Pipeline-parallel execution and distributed training | — · [🟠 2 pending](https://github.com/search?q=repo%3ANVIDIA/Megatron-LM%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
+| [huggingface/trl](https://github.com/huggingface/trl) | Public PR activity | — · [🟠 2 pending](https://github.com/search?q=repo%3Ahuggingface/trl%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
+| [llvm/llvm-project](https://github.com/llvm/llvm-project) | MLIR compiler correctness | [✅ 2 merged](https://github.com/search?q=repo%3Allvm/llvm-project%20is%3Apr%20author%3Aamanyagami%20is%3Amerged&type=pullrequests) · [🟠 4 pending](https://github.com/search?q=repo%3Allvm/llvm-project%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
+| [noahlabsai/arapuca](https://github.com/noahlabsai/arapuca) | Sandbox isolation on Linux and Windows | — · [🟠 1 pending](https://github.com/noahlabsai/arapuca/pull/1) |
+| [pytorch/ao](https://github.com/pytorch/ao) | FP8 and quantization implementation work | — · [🟠 17 pending](https://github.com/search?q=repo%3Apytorch/ao%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
+| [sergio-correia/arapuca](https://github.com/sergio-correia/arapuca) | Sandbox isolation on Linux and Windows | [✅ 2 merged](https://github.com/search?q=repo%3Asergio-correia/arapuca%20is%3Apr%20author%3Aamanyagami%20is%3Amerged&type=pullrequests) · — |
+| [sgl-project/sglang](https://github.com/sgl-project/sglang) | KV/radix-cache correctness across runtime backends | — · [🟠 1 pending](https://github.com/sgl-project/sglang/pull/35781) |
+| [verl-project/verl](https://github.com/verl-project/verl) | FSDP checkpoint integrity and vLLM rollout networking | — · [🟠 2 pending](https://github.com/search?q=repo%3Averl-project%2Fverl%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
 
 <sub>Auto-updated 2026-08-28 03:45 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · includes public PRs authored by amanyagami; excludes personal repositories</sub>
 <!-- OSS-STATS:END -->
