@@ -6,8 +6,6 @@
 
 I build LLM systems from training and inference to secure, reliable deployment.
 
-[![Profile views](https://komarev.com/ghpvc/?username=amanyagami&style=flat-square&color=0ea5e9)](https://github.com/amanyagami) [![Followers](https://img.shields.io/github/followers/amanyagami?style=flat-square&label=followers)](https://github.com/amanyagami) [![Profile stars](https://img.shields.io/github/stars/amanyagami/amanyagami?style=flat-square&label=profile%20stars)](https://github.com/amanyagami/amanyagami) [![Profile quality](https://github.com/amanyagami/amanyagami/actions/workflows/profile-quality.yml/badge.svg)](https://github.com/amanyagami/amanyagami/actions/workflows/profile-quality.yml) [![PR sync](https://github.com/amanyagami/amanyagami/actions/workflows/update-oss-stats.yml/badge.svg)](https://github.com/amanyagami/amanyagami/actions/workflows/update-oss-stats.yml)
-
 [Portfolio](https://aman-ai-portfolio.netlify.app) · [Résumé](https://asinghresume.netlify.app) · [LinkedIn](https://www.linkedin.com/in/amanyagami) · [Email](mailto:2amansingh2@gmail.com)
 
 </div>
