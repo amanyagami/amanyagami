@@ -1,0 +1,36 @@
+name: Profile quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile automation
+        run: python3 -m py_compile scripts/update_oss_stats.py
+
+      - name: Validate README automation markers
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          readme = Path("README.md").read_text(encoding="utf-8")
+          required_pairs = [
+              ("<!-- OSS-STATS:START -->", "<!-- OSS-STATS:END -->"),
+              ("<!-- OSS-SUMMARY:START -->", "<!-- OSS-SUMMARY:END -->"),
+          ]
+          for start, end in required_pairs:
+              assert readme.count(start) == 1, f"missing or duplicate marker: {start}"
+              assert readme.count(end) == 1, f"missing or duplicate marker: {end}"
+          assert "✅ merged" in readme
+          assert "🟠 pending" in readme
+          print("README quality checks passed")
+          PY
