@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
-"""Regenerate the "Open Source Contributions" card in README.md.
+"""Regenerate the visible public PR table in README.md.
 
-Pulls every PR authored by GITHUB_USER via the GitHub search API (through
-the `gh` CLI, so it inherits GH_TOKEN's auth automatically), filters out
-the user's own repos and any private/employer repos, and replaces the
-content between the OSS-STATS markers in README.md with a fresh summary:
-open PR count, PRs opened today/this week, and which external libraries
-have merged at least one of the user's PRs.
+Pulls every PR authored by GITHUB_USER through the `gh` CLI, keeps only
+public repositories, and replaces the content between the OSS-STATS
+markers with linked counts for merged, pending, and closed PRs. The same
+source data updates the compact summary in the Engineering Snapshot.
 
-Safe to run repeatedly - it's idempotent for a given day's data.
+Safe to run repeatedly - it is idempotent for a given snapshot of GitHub.
 """
 
 import json
@@ -17,19 +15,29 @@ import subprocess
 import sys
 import urllib.parse
 from collections import defaultdict
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 
 GITHUB_USER = "amanyagami"
-# Repos under these owners are excluded from the "external contributions"
-# count: the user's own repos (not "contributing to open source" in the
-# usual sense) and any private/employer org (never surface private data
-# in a public README, even if the token happened to have access to it).
-EXCLUDED_OWNERS = {"amanyagami", "noahlabsai"}
 
 START_MARKER = "<!-- OSS-STATS:START -->"
 END_MARKER = "<!-- OSS-STATS:END -->"
+SUMMARY_START_MARKER = "<!-- OSS-SUMMARY:START -->"
+SUMMARY_END_MARKER = "<!-- OSS-SUMMARY:END -->"
 
 README_PATH = "README.md"
+
+REPO_NOTES = {
+    "MPSLab-ASU/Seperating_OOD_and_ADV": "Adversarial/OOD separation framework",
+    "NVIDIA/Megatron-LM": "Pipeline-parallel execution and distributed training",
+    "llvm/llvm-project": "MLIR compiler correctness",
+    "pytorch/ao": "FP8 and quantization implementation work",
+    "sergio-correia/arapuca": "Sandbox isolation on Linux and Windows",
+    "noahlabsai/arapuca": "Sandbox isolation on Linux and Windows",
+    "sgl-project/sglang": "KV/radix-cache correctness across runtime backends",
+    "verl-project/verl": "FSDP checkpoint integrity and vLLM rollout networking",
+}
+
+PUBLIC_REPO_CACHE = {}
 
 
 def run_gh(args):
@@ -60,128 +68,136 @@ def fetch_prs(user):
     return prs
 
 
-def repo_stars(repo):
-    try:
-        out = run_gh(["api", f"repos/{repo}", "--jq", ".stargazers_count"])
-        return int(out.strip())
-    except Exception:
-        return None
+def repo_is_public(repo):
+    """Only publish PR activity for public repositories."""
+    if repo not in PUBLIC_REPO_CACHE:
+        try:
+            visibility = run_gh(["api", f"repos/{repo}", "--jq", ".visibility"])
+            PUBLIC_REPO_CACHE[repo] = visibility.strip() == "public"
+        except Exception:
+            PUBLIC_REPO_CACHE[repo] = False
+    return PUBLIC_REPO_CACHE[repo]
 
 
-def owner_of(repo):
-    return repo.split("/")[0]
+def public_prs(prs):
+    return [pr for pr in prs if repo_is_public(pr["repo"])]
 
 
-def format_stars(n):
-    if not n:
-        return ""
-    if n >= 1000:
-        return f"{n / 1000:.1f}k".replace(".0k", "k")
-    return str(n)
+def status_of(pr):
+    if pr["merged"]:
+        return "merged"
+    if pr["state"] == "open":
+        return "pending"
+    return "closed"
 
 
-def badge(label, value, color):
-    label_enc = label.replace(" ", "%20").replace("-", "--")
-    value_enc = str(value).replace(" ", "%20").replace("-", "--")
-    return f"![{label}](https://img.shields.io/badge/{label_enc}-{value_enc}-{color}?style=flat-square)"
+def pr_search_url(repo, user, status):
+    """Live GitHub search for a repository/status pair."""
+    status_query = {
+        "merged": "is:merged",
+        "pending": "is:open",
+        "closed": "is:closed -is:merged",
+    }[status]
+    query = f"repo:{repo} is:pr author:{user} {status_query}"
+    return f"https://github.com/search?q={urllib.parse.quote(query)}&type=pullrequests"
 
 
-def pr_search_url(repo, user, state):
-    """Live GitHub search for every PR the user opened in this repo with this state."""
-    q = f"repo:{repo} is:pr author:{user} is:{state}"
-    return f"https://github.com/search?q={urllib.parse.quote(q)}&type=pullrequests"
-
-
-def cell(matches, repo, user, state, icon):
-    """Render a table cell: '-' if none, a direct PR link if exactly one,
-    else a link to a live search over all of them. Reuses PR data already
-    fetched - no extra API calls."""
+def cell(matches, repo, user, status):
+    """Render a linked status count, using a direct PR link when possible."""
+    icons = {"merged": "✅", "pending": "🟠", "closed": "⚪"}
+    labels = {"merged": "merged", "pending": "pending", "closed": "closed"}
     if not matches:
         return "—"
+    icon = icons[status]
+    label = labels[status]
     if len(matches) == 1:
-        return f"[{icon} {len(matches)}]({matches[0]['url']})"
-    return f"[{icon} {len(matches)}]({pr_search_url(repo, user, state)})"
+        return f"[{icon} 1 {label}]({matches[0]['url']})"
+    return f"[{icon} {len(matches)} {label}]({pr_search_url(repo, user, status)})"
 
 
 def build_card(prs):
-    external = [p for p in prs if owner_of(p["repo"]) not in EXCLUDED_OWNERS]
+    by_repo = defaultdict(lambda: defaultdict(list))
+    for pr in prs:
+        by_repo[pr["repo"]][status_of(pr)].append(pr)
 
-    open_prs = [p for p in external if p["state"] == "open"]
-    merged_prs = [p for p in external if p["merged"]]
+    lines = [
+        START_MARKER,
+        "### Public PR activity",
+        "",
+        "✅ merged · 🟠 pending · ⚪ closed — counts link to matching PRs and refresh automatically.",
+        "",
+        "| Repository | Contribution area | PR status |",
+        "|---|---|---|",
+    ]
 
-    now = datetime.now(timezone.utc)
-    today_str = now.strftime("%Y-%m-%d")
-    week_ago = now - timedelta(days=7)
+    for repo in sorted(by_repo):
+        statuses = by_repo[repo]
+        status_cells = " · ".join(
+            cell(statuses.get(status, []), repo, GITHUB_USER, status)
+            for status in ("merged", "pending", "closed")
+        )
+        lines.append(
+            f"| [{repo}](https://github.com/{repo}) | "
+            f"{REPO_NOTES.get(repo, 'Public PR activity')} | {status_cells} |"
+        )
 
-    today_count = sum(1 for p in external if p["created"].startswith(today_str))
-    week_count = sum(
-        1
-        for p in external
-        if datetime.fromisoformat(p["created"].replace("Z", "+00:00")) >= week_ago
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    lines.extend(
+        [
+            "",
+            f"<sub>Auto-updated {ts} by "
+            f"[update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · "
+            f"includes public PRs authored by {GITHUB_USER}</sub>",
+            END_MARKER,
+        ]
     )
-
-    merged_by_repo = defaultdict(list)
-    open_by_repo = defaultdict(list)
-    for p in merged_prs:
-        merged_by_repo[p["repo"]].append(p)
-    for p in open_prs:
-        open_by_repo[p["repo"]].append(p)
-    all_repos = sorted(set(merged_by_repo) | set(open_by_repo))
-
-    lines = []
-    lines.append(START_MARKER)
-    lines.append("### 🚀 Open Source Contributions")
-    lines.append("")
-    lines.append(
-        f"{badge('Open PRs', len(open_prs), 'orange')} "
-        f"{badge('Merged', len(merged_prs), 'brightgreen')} "
-        f"{badge('This week', week_count, 'blue')} "
-        f"{badge('Today', today_count, 'blueviolet')} "
-        f"{badge('Libraries', len(all_repos), 'informational')}"
-    )
-    lines.append("")
-
-    if all_repos:
-        lines.append("| Library | Merged | Open |")
-        lines.append("|---|:---:|:---:|")
-        for repo in all_repos:
-            stars = format_stars(repo_stars(repo))
-            star_suffix = f" ⭐ {stars}" if stars else ""
-            merged_cell = cell(merged_by_repo.get(repo, []), repo, GITHUB_USER, "merged", "✅")
-            open_cell = cell(open_by_repo.get(repo, []), repo, GITHUB_USER, "open", "🟠")
-            lines.append(
-                f"| [{repo}](https://github.com/{repo}){star_suffix} | {merged_cell} | {open_cell} |"
-            )
-        lines.append("")
-
-    ts = now.strftime("%Y-%m-%d %H:%M UTC")
-    lines.append(
-        f"<sub>Auto-updated {ts} by "
-        f"[update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · "
-        f"excludes private repositories and personal projects</sub>"
-    )
-    lines.append(END_MARKER)
     return "\n".join(lines)
 
 
+def build_summary(prs):
+    counts = defaultdict(int)
+    for pr in prs:
+        counts[status_of(pr)] += 1
+    return (
+        f"✅ [{counts['merged']} merged](#open-source-systems-work) · "
+        f"🟠 [{counts['pending']} pending](#open-source-systems-work) · "
+        f"⚪ [{counts['closed']} closed](#open-source-systems-work)"
+    )
+
+
 def main():
-    prs = fetch_prs(GITHUB_USER)
+    prs = public_prs(fetch_prs(GITHUB_USER))
     card = build_card(prs)
+    summary = build_summary(prs)
 
     with open(README_PATH, "r", encoding="utf-8") as f:
         readme = f.read()
 
-    pattern = re.compile(
+    card_pattern = re.compile(
         re.escape(START_MARKER) + r".*?" + re.escape(END_MARKER), re.DOTALL
     )
-    if not pattern.search(readme):
+    summary_pattern = re.compile(
+        re.escape(SUMMARY_START_MARKER) + r".*?" + re.escape(SUMMARY_END_MARKER),
+        re.DOTALL,
+    )
+    if not card_pattern.search(readme):
         print(
             f"Could not find {START_MARKER} ... {END_MARKER} markers in {README_PATH}",
             file=sys.stderr,
         )
         sys.exit(1)
+    if not summary_pattern.search(readme):
+        print(
+            f"Could not find {SUMMARY_START_MARKER} ... {SUMMARY_END_MARKER} markers in {README_PATH}",
+            file=sys.stderr,
+        )
+        sys.exit(1)
 
-    new_readme = pattern.sub(card, readme)
+    new_readme = card_pattern.sub(lambda _match: card, readme)
+    new_readme = summary_pattern.sub(
+        lambda _match: f"{SUMMARY_START_MARKER}{summary}{SUMMARY_END_MARKER}",
+        new_readme,
+    )
 
     with open(README_PATH, "w", encoding="utf-8") as f:
         f.write(new_readme)
