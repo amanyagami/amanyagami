@@ -3,7 +3,7 @@
 
 Pulls every PR authored by GITHUB_USER through the `gh` CLI, keeps only
 public repositories outside the user's own namespace, and replaces the content between the OSS-STATS
-markers with linked counts for merged and pending PRs. The same
+markers with linked counts for merged PRs only. The same
 source data updates the compact summary in the Engineering Snapshot.
 
 Safe to run repeatedly - it is idempotent for a given snapshot of GitHub.
@@ -13,7 +13,6 @@ import json
 import re
 import subprocess
 import sys
-import urllib.parse
 from collections import defaultdict
 from datetime import datetime, timezone
 
@@ -92,41 +91,27 @@ def status_of(pr):
     return "closed"
 
 
-def pr_search_url(repo, user, status):
-    """Live GitHub search for a repository/status pair."""
-    status_query = {
-        "merged": "is:merged",
-        "pending": "is:open",
-    }[status]
-    query = f"repo:{repo} is:pr author:{user} {status_query}"
-    return f"https://github.com/search?q={urllib.parse.quote(query)}&type=pullrequests"
-
-
-def cell(matches, repo, user, status):
-    """Render a linked status count, using a direct PR link when possible."""
-    icons = {"merged": "✅", "pending": "🟠"}
-    labels = {"merged": "merged", "pending": "pending"}
+def cell(matches):
+    """Render a linked merged count, using a direct PR link when possible."""
     if not matches:
         return "—"
-    icon = icons[status]
-    label = labels[status]
     if len(matches) == 1:
-        return f"[{icon} 1 {label}]({matches[0]['url']})"
-    return f"[{icon} {len(matches)} {label}]({pr_search_url(repo, user, status)})"
+        return f"[✅ 1 merged]({matches[0]['url']})"
+    return f"[✅ {len(matches)} merged](https://github.com/search?q=author%3A{GITHUB_USER}%20is%3Apr%20is%3Amerged&type=pullrequests)"
 
 
 def build_card(prs):
     by_repo = defaultdict(lambda: defaultdict(list))
     for pr in prs:
         status = status_of(pr)
-        if status in ("merged", "pending"):
+        if status == "merged":
             by_repo[pr["repo"]][status].append(pr)
 
     lines = [
         START_MARKER,
         "### Public PR activity",
         "",
-        "✅ merged · 🟠 pending — linked counts refresh automatically.",
+        "✅ merged — linked counts refresh automatically.",
         "",
         "| Repository | PR status |",
         "|---|---|",
@@ -134,10 +119,7 @@ def build_card(prs):
 
     for repo in sorted(by_repo):
         statuses = by_repo[repo]
-        status_cells = " · ".join(
-            cell(statuses.get(status, []), repo, GITHUB_USER, status)
-            for status in ("merged", "pending")
-        )
+        status_cells = cell(statuses.get("merged", []))
         lines.append(
             f"| [{repo}](https://github.com/{repo}) | {status_cells} |"
         )
@@ -156,13 +138,8 @@ def build_card(prs):
 
 
 def build_summary(prs):
-    counts = defaultdict(int)
-    for pr in prs:
-        counts[status_of(pr)] += 1
-    return (
-        f"✅ [{counts['merged']} merged](#open-source-systems-work) · "
-        f"🟠 [{counts['pending']} pending](#open-source-systems-work)"
-    )
+    merged = sum(status_of(pr) == "merged" for pr in prs)
+    return f"✅ [{merged} merged](#open-source-systems-work)"
 
 
 def main():
