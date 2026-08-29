@@ -26,8 +26,8 @@ I build LLM systems from training and inference to secure, reliable deployment.
 | Repository | PR status |
 | --- | --- |
 | [MPSLab-ASU/Seperating_OOD_and_ADV](https://github.com/MPSLab-ASU/Seperating_OOD_and_ADV) | [✅ 1 merged](https://github.com/MPSLab-ASU/Seperating_OOD_and_ADV/pull/1) |
-| [llvm/llvm-project](https://github.com/llvm/llvm-project) | [✅ 2 merged](https://github.com/search?q=repo%3Allvm/llvm-project%20is%3Apr%20author%3Aamanyagami%20is%3Amerged&type=pullrequests) |
-| [sergio-correia/arapuca](https://github.com/sergio-correia/arapuca) | [✅ 2 merged](https://github.com/search?q=repo%3Asergio-correia%2Farapuca%20is%3Apr%20author%3Aamanyagami%20is%3Amerged&type=pullrequests) |
+| [LeGambiArt/arapuca](https://github.com/LeGambiArt/arapuca) | [✅ 2 merged](https://github.com/search?q=repo%3ALeGambiArt%2Farapuca%20is%3Apr%20author%3Aamanyagami%20is%3Amerged&type=pullrequests) |
+| [llvm/llvm-project](https://github.com/llvm/llvm-project) | [✅ 3 merged](https://github.com/search?q=repo%3Allvm/llvm-project%20is%3Apr%20author%3Aamanyagami%20is%3Amerged&type=pullrequests) |
 
 <sub>Auto-updated 2026-08-29 16:18 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · includes public external PRs authored by amanyagami; excludes personal and excluded repositories</sub>
 <!-- OSS-STATS:END -->
