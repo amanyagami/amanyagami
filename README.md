@@ -38,7 +38,7 @@ I build LLM systems from training and inference to secure, reliable deployment.
 | [unslothai/unsloth](https://github.com/unslothai/unsloth) | — · [🟠 1 pending](https://github.com/unslothai/unsloth/pull/9912) |
 | [verl-project/verl](https://github.com/verl-project/verl) | — · [🟠 3 pending](https://github.com/search?q=repo%3Averl-project/verl%20is%3Apr%20author%3Aamanyagami%20is%3Aopen&type=pullrequests) |
 
-<sub>Auto-updated 2026-08-29 01:13 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · includes public external PRs authored by amanyagami; excludes personal and excluded repositories</sub>
+<sub>Auto-updated 2026-08-29 11:50 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · includes public external PRs authored by amanyagami; excludes personal and excluded repositories</sub>
 <!-- OSS-STATS:END -->
 
 ## Selected work
