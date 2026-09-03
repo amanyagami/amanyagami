@@ -30,7 +30,7 @@ I build LLM systems from training and inference to secure, reliable deployment.
 | [NVIDIA/Megatron-LM](https://github.com/NVIDIA/Megatron-LM) | [✅ 1 merged](https://github.com/NVIDIA/Megatron-LM/pull/6732) |
 | [llvm/llvm-project](https://github.com/llvm/llvm-project) | [✅ 4 merged](https://github.com/search?q=author%3Aamanyagami%20is%3Apr%20is%3Amerged&type=pullrequests) |
 
-<sub>Auto-updated 2026-09-03 10:12 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · includes public external PRs authored by amanyagami; excludes personal and excluded repositories</sub>
+<sub>Auto-updated 2026-09-03 15:19 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · includes public external PRs authored by amanyagami; excludes personal and excluded repositories</sub>
 <!-- OSS-STATS:END -->
 
 ## Selected work
