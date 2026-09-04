@@ -31,7 +31,7 @@ I build LLM systems from training and inference to secure, reliable deployment.
 | [llvm/llvm-project](https://github.com/llvm/llvm-project) | [✅ 4 merged](https://github.com/search?q=author%3Aamanyagami%20is%3Apr%20is%3Amerged&type=pullrequests) |
 | [unslothai/unsloth](https://github.com/unslothai/unsloth) | [✅ 1 merged](https://github.com/unslothai/unsloth/pull/9912) |
 
-<sub>Auto-updated 2026-09-04 01:34 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · includes public external PRs authored by amanyagami; excludes personal and excluded repositories</sub>
+<sub>Auto-updated 2026-09-04 10:02 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · includes public external PRs authored by amanyagami; excludes personal and excluded repositories</sub>
 <!-- OSS-STATS:END -->
 
 ## Selected work
