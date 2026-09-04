@@ -14,7 +14,7 @@ I build LLM systems from training and inference to secure, reliable deployment.
 
 **Evidence:** H100/DDP/FP16-BF16 · FSDP/vLLM · sub-10 ms A6000 inference · Rust sandboxing · 1.8× traffic · 30% lower cost · 60% fewer incidents
 
-**Open-source:** SGLang · VERL · Megatron-LM · PyTorch AO · LLVM/MLIR · arapuca · <!-- OSS-SUMMARY:START -->✅ [8 merged](#open-source-systems-work)<!-- OSS-SUMMARY:END -->
+**Open-source:** SGLang · VERL · Megatron-LM · PyTorch AO · LLVM/MLIR · arapuca · <!-- OSS-SUMMARY:START -->✅ [9 merged](#open-source-systems-work)<!-- OSS-SUMMARY:END -->
 
 ## Open-source systems work
 
@@ -29,8 +29,9 @@ I build LLM systems from training and inference to secure, reliable deployment.
 | [MPSLab-ASU/Seperating_OOD_and_ADV](https://github.com/MPSLab-ASU/Seperating_OOD_and_ADV) | [✅ 1 merged](https://github.com/MPSLab-ASU/Seperating_OOD_and_ADV/pull/1) |
 | [NVIDIA/Megatron-LM](https://github.com/NVIDIA/Megatron-LM) | [✅ 1 merged](https://github.com/NVIDIA/Megatron-LM/pull/6732) |
 | [llvm/llvm-project](https://github.com/llvm/llvm-project) | [✅ 4 merged](https://github.com/search?q=author%3Aamanyagami%20is%3Apr%20is%3Amerged&type=pullrequests) |
+| [unslothai/unsloth](https://github.com/unslothai/unsloth) | [✅ 1 merged](https://github.com/unslothai/unsloth/pull/9912) |
 
-<sub>Auto-updated 2026-09-03 20:12 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · includes public external PRs authored by amanyagami; excludes personal and excluded repositories</sub>
+<sub>Auto-updated 2026-09-04 01:34 UTC by [update-oss-stats.yml](.github/workflows/update-oss-stats.yml) · includes public external PRs authored by amanyagami; excludes personal and excluded repositories</sub>
 <!-- OSS-STATS:END -->
 
 ## Selected work
