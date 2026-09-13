@@ -14,7 +14,7 @@ I build LLM systems from training and inference to secure, reliable deployment.
 
 **Evidence:** H100/DDP/FP16-BF16 · FSDP/vLLM · sub-10 ms A6000 inference · Rust sandboxing · 1.8× traffic · 30% lower cost · 60% fewer incidents
 
-**Open-source:** SGLang · VERL · Megatron-LM · PyTorch AO · LLVM/MLIR · arapuca · <!-- OSS-SUMMARY:START -->✅ [10 merged](#open-source-systems-work)<!-- OSS-SUMMARY:END -->
+**Open-source:** SGLang · VERL · Megatron-LM · PyTorch AO · LLVM/MLIR · arapuca · OpenRLHF · Unsloth · <!-- OSS-SUMMARY:START -->✅ [10 merged](#open-source-systems-work)<!-- OSS-SUMMARY:END -->
 
 ## Open-source systems work
 
@@ -41,7 +41,7 @@ I build LLM systems from training and inference to secure, reliable deployment.
 
 ## Research
 
-**Viyog: Separating Adversarial and Out-of-Distribution** — accepted at **ESWEEK CODES 2026**. Research on separating adversarial and OOD inputs using intermediate-representation geometry.
+**Viyog: Separating Adversarial and Out-of-Distribution** — accepted at **ESWEEK CODES 2026**. Research on separating adversarial and OOD inputs using intermediate-representation geometry. A second paper (with Yonsei University) is under review at **DATE**.
 
 **Resources:** [Venue](https://esweek.org/) · [Code](https://github.com/MPSLab-ASU/Seperating_OOD_and_ADV) · [PyPI](https://pypi.org/project/viyog/) · [Leaderboard](https://huggingface.co/spaces/amanyagami/viyog) · [Dataset](https://huggingface.co/datasets/amanyagami/viyog-adversarial) · [Weights](https://huggingface.co/amanyagami/viyog-weights) · [Checkpoints](https://huggingface.co/amanyagami/Cifar100_Finetuned)
 
